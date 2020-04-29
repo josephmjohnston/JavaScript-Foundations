@@ -5,7 +5,7 @@
 */
 
 let principal= 200000;
-let interestRate = .05;
+var interestRate = .05;
 let years = 30;
 const name = "Joseph";
 
@@ -87,25 +87,35 @@ Then, add control flow within your function such that IF creditScore is above 74
 */
 
 
-function mortageCalulator2 (principal, interestRate, periods
-    ) {
-    monthlyRate = ( principal * (numerator / denominator));
-    let creditScore= 780;
+function mortageCalculator2 (principal, interestRate, periods) {
     
-    if (creditScore > 740) {
-        console.log (interestRate - .5);
+    let creditScore = 780;
+    let numerator = monthlyInterestRate * (Math.pow(1 + monthlyInterestRate, periods));
+    let denominator = Math.pow(1 + monthlyInterestRate, periods)-1;
+
+    if (creditScore >= 740) {
+        interestRate - .5;
+        // console.log (monthlyRate = ( principal * (numerator / denominator)));
+        // console.log (interestRate);
     }
+
     else if(creditScore<660) {
-        console.log(interestRate + .5);
+        interestRate + .5;
+        // console.log (monthlyRate = ( principal * (numerator / denominator)));
          
     }
     else {
-        console.log 
+        console.log (monthlyRate);
+
+           
     }
+
+    console.log (interestRate);
+    console.log (monthlyRate = ( principal * (numerator / denominator)));
     
 }
 
-mortageCalulator2(principal, interestRate, periods);
+mortageCalculator2(principal, interestRate, periods);
 
 
 
@@ -125,7 +135,9 @@ For example, variableInterestRate(200000, 0.04, 30) should console.log:
 "{Name}, with an interest rate of 0.06, your monthly rate is $1199"
 */
 
+// function variableInterestRate {
 
+// }
 
 
 // 🌟🌟🌟 STRETCH 🌟🌟🌟//
