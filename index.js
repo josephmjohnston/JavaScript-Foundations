@@ -35,8 +35,8 @@ When your math is correct, monthlyRate will equal 1073.64
 // M = P [ I ( 1 + I )^N ] / [ ( 1 + I )^N – 1 ]
 
 // return principal [ interestRate *(Math.pow( 1 + interestRate ,periods)) ] / [ Math.pow( 1 + interestRate, periods) - 1 ],
-let numerator = interestRate * (Math.pow(1 + interestRate, periods));
-let denominator = Math.pow(1+interestRate, periods)-1;
+let numerator = monthlyInterestRate * (Math.pow(1 + monthlyInterestRate, periods));
+let denominator = Math.pow(1+monthlyInterestRate, periods)-1;
 
 //function calculatorInterest (){
     let monthlyRate;
@@ -52,7 +52,14 @@ console.log (monthlyRate);
 If your name is `Oscar` mortgageCalculator() should return "Oscar, your monthly rate is 1073.64"
 */
 
+function mortageCalulator (principal, interestRate, periods) {
 
+    monthlyRate = ( principal * (numerator / denominator));
+
+    console.log (name + ", your monthly rate is " + monthlyRate);
+}
+
+mortageCalulator();
 
 
 
@@ -63,14 +70,15 @@ For example,
 mortgageCalculator(2000000, 0.05, 30); <-- should return 1,073.64
 */
 
-function mortageCalulator (principal, interestRate, periods) {
-     principle = 2000000;
-     interestRate = .05;
-     periods = 30;
 
-    console.log ( principal * (numerator / denominator));
+function mortageCalulator (principal, interestRate, periods) {
+    // monthlyRate = ( principal * (numerator / denominator));
+
+    console.log (name + ", your monthly rate is " + monthlyRate);
 }
-mortageCalulator();
+
+mortageCalulator(200000, .05, 30);
+
 
 // 🏡 Task 5: Conditionals
 /* Add another paramter to your function called credit score. This parameter will be a number between 0 and 800 (a credit score).
@@ -78,6 +86,26 @@ mortageCalulator();
 Then, add control flow within your function such that IF creditScore is above 740, interest rate drops by 0.5%, if credit score is below 660, interest rate increases by 0.5% and if credit score is anywhere between 660 and 740 interest rate doesn't change.
 */
 
+
+function mortageCalulator2 (principal, interestRate, periods
+    ) {
+    monthlyRate = ( principal * (numerator / denominator));
+    let creditScore= 780;
+    
+    if (creditScore > 740) {
+        console.log (interestRate - .5);
+    }
+    else if(creditScore<660) {
+        console.log(interestRate + .5);
+         
+    }
+    else {
+        console.log 
+    }
+    
+}
+
+mortageCalulator2(principal, interestRate, periods);
 
 
 
@@ -114,3 +142,5 @@ For example, variableInterestRate(200000, 0.04, 30) should console.log:
 
 
 /* 🏡  Refactor your `variableInterestRate()` function to accept an array of interest rates (make sure to copy and paste as to not lose your work!) */
+
+
