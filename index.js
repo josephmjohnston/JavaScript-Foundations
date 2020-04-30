@@ -150,7 +150,7 @@ function variableInterestRate (principal, interestRate, years) {
                                  
 
 
-    console.log (`${adjustedInterestRate} ${i} + yourmonthly rate is ${monthlyRate}`)
+    console.log (`${name}, with an interest of ${adjustedInterestRate}, yourmonthly rate is ${monthlyRate}`)
     }
 }
 console.log (variableInterestRate (20000,.05,30));
