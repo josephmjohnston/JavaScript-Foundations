@@ -130,17 +130,14 @@ For example, variableInterestRate(200000, 0.04, 30) should console.log:
 */
 
 
-function variableInterestRate (principal, interestRate, years, creditScore) {
+function variableInterestRate (principal, interestRate, years) {
 
-    let adjustedInterestRate=interestRate;
+    for (let i = 0; i < 10; i++) {    
 
-    if (creditScore > 740) {
-        adjustedInterestRate = adjustedInterestRate - .005;
-    }
-
-    else if(creditScore<660) {
-        adjustedInterestRate = adjustedInterestRate + .005;
-    }
+    //interestRate -.02 + (i * .005);
+    
+    interestRate - .02;
+    let adjustedInterestRate  = interestRate + (i * .005);
 
     let monthlyInterestRate = adjustedInterestRate /12;
     let periods=years * 12;
@@ -148,13 +145,19 @@ function variableInterestRate (principal, interestRate, years, creditScore) {
     let numerator = monthlyInterestRate * (Math.pow(1 + monthlyInterestRate), periods);
     let denominator = Math.pow((1 + monthlyInterestRate), periods) - 1;
 
-    let monthlyRate = principal * (numerator/denominator)
+    let monthlyRate = principal * (numerator/denominator);
+    
+                                 
 
-    return `${name} + yourmonthly rate is ${monthlyRate}`
+
+    console.log (`${adjustedInterestRate} ${i} + yourmonthly rate is ${monthlyRate}`)
+    }
 }
+console.log (variableInterestRate (20000,.05,30));
 
-console.log (variableInterestRate (20000,.05,30,800));
-
+// for (let i = 0; i < 10; i++) {
+//     console.log(i);
+// }
 
 // 🌟🌟🌟 STRETCH 🌟🌟🌟//
 
